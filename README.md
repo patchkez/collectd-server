@@ -10,6 +10,7 @@ docker run -d -e HOST_NAME=$(hostname -s) -e GRAPHITE_HOST=<graphite host> \
   -e GRAPHITE_PORT=2003 -v </etc/ceph/of/running/cluster>:/etc/ceph:ro \
   -e GRAPHITE_UPDATE_INTERVAL=30 -e GRAPHITE_PREFIX=collectd. \
   -e CEPH_CLUSTER_NAME=<my ceph cluster> \
+  -e TEST_POOL_BENCH=<rados pool used for collecting latency metrics> \
   bobrik/ceph-collectd-graphite
 ```
 
