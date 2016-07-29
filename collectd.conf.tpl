@@ -64,6 +64,6 @@ LoadPlugin write_graphite
         Verbose "True"
         Cluster "{{ CEPH_CLUSTER_NAME }}"
         Interval "{{ GRAPHITE_UPDATE_INTERVAL | default("30") }}"
-        TestPool "{{ TEST_POOL_BENCH }}"
+        TestPool "{{ TEST_POOL_BENCH | default("data") }}"
     </Module>
 </Plugin>
