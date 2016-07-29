@@ -21,6 +21,7 @@ Environment variables:
 * `GRAPHITE_UPDATE_INTERVAL` - metric update interval, `30` by default
 * `GRAPHITE_PREFIX` - prefix for metrics in graphite, `collectd.` by default.
 * `CEPH_CLUSTER_NAME` - cluster name to use in graphite.
+* `TEST_POOL_BENCH` - name of rados pool which will be used for measuring latency
 
 Note that you must pass `/etc/ceph` into container to collect metrics.
 
