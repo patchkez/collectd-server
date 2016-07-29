@@ -13,7 +13,7 @@ RUN git clone https://github.com/patchkez/collectd-ceph.git /tmp/collectd-ceph &
     rm -rf /tmp/collectd-ceph
 
 # ceph config dir should be available
-VOLUME /etc/ceph /etc/hosts
+VOLUME /etc/ceph
 
 ADD ./run.sh /run.sh
 ENTRYPOINT ["/run.sh"]
