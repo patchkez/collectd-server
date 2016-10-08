@@ -16,15 +16,15 @@ ADD collectd_server.conf.tpl /etc/collectd/collectd.conf.tpl
 #VOLUME /etc/ceph
 
 # PLUGINS: CPU,  
-VOLUME /proc
+#VOLUME /proc
 
 # PLUGINS: CPUfrew,
-VOLUME /sys  
+#VOLUME /sys  
 
 # PLUGINS: Disks
-VOLUME /dev
+#VOLUME /dev
 
-VOLUME /etc/hostname
+#VOLUME /etc/hostname
 
 ADD ./run.sh /run.sh
 ENTRYPOINT ["/run.sh"]
