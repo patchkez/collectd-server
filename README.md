@@ -1,7 +1,29 @@
-# Collect ceph metrics to graphite
+# Dockerized collectd daemon 
 
-This is dockerized version of [collectd-ceph](https://github.com/rochaporto/collectd-ceph).
-You only need docker to run this, ceph to monitor and graphite to store metrics.
+This is dockerized version of [collectd](https://collectd.org/) with multiple plugins for monitoring of Linux server.
+You only need docker to run this (in privileged mode?), and grafana with data source (influxdb) for displaying graphs.
+i
+Enabled plugins:
+- write_graphite
+- conntrack
+- cpu
+- cpufreq
+- df
+- disk
+- hddtemp
+- ipmi
+- smart
+- interface
+- load
+- memory
+- processes
+- swap
+- tcpconns
+- uptime
+- users
+- virt
+
+
 
 ## Running
 
@@ -11,9 +33,7 @@ docker run -d -e HOST_NAME=$(hostname -s) -e GRAPHITE_HOST=<graphite host> \
   -v </etc/ceph/of/running/cluster>:/etc/ceph:ro \
   -v /etc/hosts:/etc/hosts:ro
   -e GRAPHITE_UPDATE_INTERVAL=30 -e GRAPHITE_PREFIX=collectd. \
-  -e CEPH_CLUSTER_NAME=<my ceph cluster> \
-  -e TEST_POOL_BENCH=<rados pool used for collecting latency metrics> \
-  patchkez/ceph-collectd-graphite
+  patchkez/collectd-server
 ```
 
 Environment variables:
@@ -23,18 +43,5 @@ Environment variables:
 * `GRAPHITE_PORT` - port where carbon is listening for data, `2003` by default.
 * `GRAPHITE_UPDATE_INTERVAL` - metric update interval, `30` by default
 * `GRAPHITE_PREFIX` - prefix for metrics in graphite, `collectd.` by default.
-* `CEPH_CLUSTER_NAME` - cluster name to use in graphite.
-* `TEST_POOL_BENCH` - name of rados pool which will be used for measuring latency
-
-Note that you must pass `/etc/ceph` into container to collect metrics.
 
 This image builds from `ceph/base` and has the same tags.
-
-Check out [collectd-ceph](https://github.com/rochaporto/collectd-ceph)
-for more info and awesome grafana dasboard:
-
-![grafana](grafana.png)
-
-# Authors
-
-* [Ian Babrou](https://github.com/bobrik)
