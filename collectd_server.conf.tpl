@@ -39,8 +39,8 @@ LoadPlugin virt
 
 ## CollectD Servers
 <Plugin "network">
-        Server "{{ $COLLECTD_HOST }}" "{{ COLLECTD_PORT | default("25826") }}"
-        SecurityLevel None
+   Server "{{ $COLLECTD_HOST }}" "{{ COLLECTD_PORT | default("25826") }}"
+   SecurityLevel None
 </Plugin>
 
 <Plugin tcpconns>
