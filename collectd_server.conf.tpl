@@ -25,18 +25,6 @@ LoadPlugin uptime
 LoadPlugin users
 LoadPlugin virt
 
-## <Plugin "write_graphite">
-##  <Carbon>
-##    Host "{{ GRAPHITE_HOST }}"
-##    Port "{{ GRAPHITE_PORT | default("2003") }}"
-##    Protocol "tcp"
-##    Prefix "{{ GRAPHITE_PREFIX | default("collectd.") }}"
-##    StoreRates true
-##    AlwaysAppendDS false
-##    SeparateInstances true
-##  </Carbon>
-## </Plugin>
-
 ## CollectD Servers
 <Plugin "network">
    Server "{{ COLLECTD_HOST }}" "{{ COLLECTD_PORT | default("25826") }}"
