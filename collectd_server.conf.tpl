@@ -30,6 +30,23 @@ LoadPlugin virt
    SecurityLevel None
 </Plugin>
 
-<Plugin tcpconns>
+<Plugin "tcpconns">
    LocalPort "22"
+</Plugin>
+
+<Plugin "disk">
+  Disk "dm-*"
+  IgnoreSelected true
+</Plugin>
+
+<Plugin "interface">
+  Interface "eno1"
+  Interface "eno2"
+  Interface "enp3s0f0"
+  Interface "enp3s0f1"
+  Interface "bond0"
+  Interface "brlan"
+  Interface "brwan"
+  Interface "docker0"
+  IgnoreSelected false
 </Plugin>
