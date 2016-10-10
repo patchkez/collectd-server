@@ -44,7 +44,6 @@ LoadPlugin virt
   Interface "eno2"
   Interface "enp3s0f0"
   Interface "enp3s0f1"
-  Interface "bond0"
   Interface "brlan"
   Interface "brwan"
   Interface "docker0"
