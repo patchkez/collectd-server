@@ -6,6 +6,6 @@ RUN apt-get update && \
 
 ADD collectd_server.conf.tpl /etc/collectd/collectd.conf.tpl
 
-ADD run.sh /run.sh
+ADD run.sh /root/run.sh
 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/root/run.sh"]
