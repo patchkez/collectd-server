@@ -8,4 +8,4 @@ ADD collectd_server.conf.tpl /etc/collectd/collectd.conf.tpl
 
 ADD run.sh /run.sh
 
-ENTRYPOINT ['/run.sh']
+ENTRYPOINT ["/run.sh"]
